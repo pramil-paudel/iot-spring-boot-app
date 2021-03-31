@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="tylesheet" href="./css/dashboard.css">
+<!--    <link rel="javascript" src="../js/dashboard.js">-->
+<!--    <link rel="stylesheet" href="styles.css">-->
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="menu-column">
+        <ul class="nav">
+            <li class="pulse"></li>
+            <li class="chat"></li>
+            <li class="calendar"></li>
+            <li class="clipboard"></li>
+            <li class="settings"></li>
+        </ul>
+        <div class="profile"><img src="https://placeimg.com/100/100/face" /></div>
+    </div>
+    <div class="content-column">
+        <div class="header-container" id="headerContainer">
+            <div class="nav">
+                <div class="content">
+                    <p> Hello <span class="name">WELCOME</span>TO CONTEXT AWARE IOT SYSTEM</p><span class="shape score">TEMPERATURE</span><span class="shape">HUMIDITY</span>
+                </div>
+            </div>
+            <div class="select-boxes"></div>
+            <div class="float-none"></div>
+            <div class="graph"><canvas id="bpChart" style="position: relative; z-index: 100"></canvas></div>
+        </div>
+        <div class="split-container">
+            <div class="split">
+                <h3>SENSOR 1</h3>
+                <div class="temperature"></div>36.7<div class="split-graph"><canvas id="temperatureGraph"></canvas></div>
+            </div>
+            <div class="split">
+                <h3>SENSOR 2</h3>
+                <div class="temperature"></div>36.7<div class="split-graph"><canvas id="temperatureGraph"></canvas></div>
+            </div>
+            <div class="split">
+                <h3>SENSOR 3</h3>
+                <div class="temperature"></div>36.7<div class="split-graph"><canvas id="temperatureGraph"></canvas></div>
+            </div>
+        </div>
+        <div class="sleep">
+            <div class="totals">
+                <div class="collective"><span class="hours">8</span><span class="minutes">25</span>
+                    <p>Total sleep time</p>
+                </div>
+                <div class="split first"></div> 6h 12m
+                p Deep<div class="split"></div> 2h 13m
+                p Light
+            </div>
+            <div class="sleep-graph">
+                <div class="sleep-graph-container">
+                    <h2>Sleep Analytics</h2>
+                    <div class="sleep-select-wrapper"><select>
+                        <option value="today">Today</option>
+                    </select></div>
+                    <div class="chart-container"><canvas id="sleepChart"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-column">
+        <div class="search-container"><img src="https://svgshare.com/i/56w.svg" /><input type="text" placeholder="Search" /></div>
+        <div class="activity-list">
+            <h3>Notification</h3>
+            <div class="activity">
+                <div class="text"><span class="name">Peter Smith</span>added a new appointment to your calendar.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

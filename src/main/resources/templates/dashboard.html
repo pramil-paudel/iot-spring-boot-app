@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/chart_one.css}" rel="stylesheet">
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/http_code.highcharts.com_highcharts.js}"></script>
+    <script type="text/javascript" th:src="@{/js/http_code.highcharts.com_modules_accessibility.js}"></script>
+    <script type="text/javascript" th:src="@{/js/http_code.highcharts.com_modules_export-data.js}"></script>
+    <script type="text/javascript" th:src="@{/js/http_code.highcharts.com_modules_exporting.js}"></script>
+    <script type="text/javascript" th:src="@{/js/http_code.highcharts.com_modules_series-label.js}"></script>
+    <script type="text/javascript" th:src="@{/js/dashboard.js}"></script>
+
+
+    <div class="container">
+        <div class="menu-column">
+            <ul class="nav">
+                <li class="pulse"></li>
+                <li class="chat"></li>
+                <li class="calendar"></li>
+                <li class="clipboard"></li>
+                <li class="settings"></li>
+            </ul>
+            <div class="profile"><img src="https://placeimg.com/100/100/face"/></div>
+        </div>
+        <div class="content-column">
+            <div class="header-container" id="headerContainer">
+                <div class="nav">
+                    <div class="content">
+                        <p> Hello <span class="name">WELCOME</span>TO CONTEXT AWARE IOT SYSTEM</p><span
+                            class="shape score">TEMPERATURE</span><span
+                            class="shape">HUMIDITY</span>
+                    </div>
+                </div>
+                <div class="select-boxes"></div>
+                <div class="float-none"></div>
+                <div class="graph">
+                    <canvas id="bpChart" style="position: relative; z-index: 100"></canvas>
+                </div>
+            </div>
+            <div class="split-container">
+                <div class="split">
+                    <h3>SENSOR 1</h3>
+                    <div class="temperature"></div>
+                    36.7
+                    <div class="split-graph">
+                        <canvas id="temperatureGraph"></canvas>
+                    </div>
+                </div>
+                <div class="split">
+                    <h3>SENSOR 2</h3>
+                    <div class="temperature"></div>
+                    36.7
+                    <div class="split-graph">
+                        <canvas id="temperatureGraph"></canvas>
+                    </div>
+                </div>
+                <div class="split">
+                    <h3>SENSOR 3</h3>
+                    <div class="temperature"></div>
+                    36.7
+                    <div class="split-graph">
+                        <canvas id="temperatureGraph"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="sleep">
+                <div class="totals">
+                    <div class="collective"><span class="hours">8</span><span class="minutes">25</span>
+                        <p>Total Up Time</p>
+                    </div>
+                    <div class="split first"></div>
+                    <div class="split"></div>
+                </div>
+                <div class="sleep-graph">
+                    <div class="sleep-graph-container">
+                        <h2>Temp Humidity Analysis</h2>
+                        <!--                    <div class="sleep-select-wrapper"><select>-->
+                        <!--                        <option value="today">Today</option>-->
+                        <!--                    </select></div>-->
+                        <!--                    <div class="chart-container">-->
+                        <!--                        <canvas id="sleepChart"></canvas>-->
+                        <!--                    </div>-->
+                        <figure class="highcharts-figure">
+                            <div id="container"></div>
+                            <p class="highcharts-description">
+                                Realtime Temp-Humidity Data Analysis
+                            </p>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-column">
+            <div class="search-container"><img src="https://svgshare.com/i/56w.svg"/><input type="text"
+                                                                                            placeholder="Search"/></div>
+            <div class="activity-list">
+                <h3>Notification</h3>
+                <div class="activity">
+                    <div class="text"><span class="name">Peter Smith</span>added a new appointment to your calendar.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+
+            title: {
+                text: 'Real time Temperature'
+            },
+            yAxis: {
+                title: {
+                    text: 'Temperature'
+                }
+            },
+
+            xAxis: {
+                accessibility: {
+                    rangeDescription: 'Temperature Distribution'
+                }
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 7
+                }
+            },
+
+            series: [{
+                name: 'Temperature',
+                data: [45, 50, 50, 70, 80, 45, 26, 37]
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
+</html>
